@@ -1,8 +1,8 @@
 import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
 import { StationSearch } from "../components/StationSearch";
 import {
+  dataAsOf,
   findStation,
-  generatedAt,
   normalise,
   source,
   stationList,
@@ -27,14 +27,15 @@ function Home() {
   const navigate = useNavigate({ from: Route.fullPath });
   const fromStation = from ? findStation(from) : undefined;
   const toStation = to ? findStation(to) : undefined;
-  const candidates = fromStation
-    ? fromStation.connections.flatMap((c) => findStation(c.station) ?? [])
-    : undefined;
+  const candidates = fromStation?.connections.flatMap((c) =>
+    c.station ? (findStation(c.station) ?? []) : [],
+  );
   const shown = fromStation
     ? toStation
-      ? fromStation.connections.filter((c) => normalise(c.station) === toStation.key)
+      ? fromStation.connections.filter((c) => c.station && normalise(c.station) === toStation.key)
       : fromStation.connections
     : [];
+  const count = fromStation?.connections.length ?? 0;
 
   return (
     <main>
@@ -65,7 +66,7 @@ function Home() {
             label="Interchange with (optional)"
             placeholder={fromStation ? "Filter its interchanges" : "Pick a station first"}
             value={toStation?.name ?? ""}
-            candidates={candidates}
+            candidates={candidates ?? []}
             onSelect={(station) =>
               navigate({ search: (prev) => ({ ...prev, to: station?.name }), replace: true })
             }
@@ -82,8 +83,7 @@ function Home() {
           <h2>
             {fromStation.name}
             <span className="count">
-              {fromStation.connections.length} interchange
-              {fromStation.connections.length === 1 ? "" : "s"}
+              {count} interchange{count === 1 ? "" : "s"}
             </span>
           </h2>
           {to && shown.length === 0 && (
@@ -93,8 +93,8 @@ function Home() {
             </p>
           )}
           <ul className="connections">
-            {shown.map((connection) => (
-              <ConnectionCard key={connection.station} connection={connection} />
+            {shown.map((connection, i) => (
+              <ConnectionCard key={i} from={fromStation.name} connection={connection} />
             ))}
           </ul>
         </section>
@@ -102,41 +102,44 @@ function Home() {
 
       <footer>
         Data: <a href={source}>TfL out-of-station interchanges</a>
-        {generatedAt && <> · updated {new Date(generatedAt).toLocaleDateString("en-GB")}</>}. Always
-        check before you travel.
+        {dataAsOf && <>, up to {new Date(dataAsOf).toLocaleDateString("en-GB")}</>}. Station names
+        are expanded from TfL's abbreviations. Always check before you travel.
       </footer>
     </main>
   );
 }
 
-function ConnectionCard({ connection }: { connection: Connection }) {
-  const extras = Object.entries(connection.extra);
+function ConnectionCard({ from, connection }: { from: string; connection: Connection }) {
+  const { station, minutesOut, minutesBack, magneticMinutes, ticketTypes, between } = connection;
   return (
     <li className="connection">
       <div className="connection-main">
-        <Link to="/" search={{ from: connection.station }} className="station-link">
-          {connection.station}
-        </Link>
-        {extras.length > 0 && (
-          <dl>
-            {extras.map(([key, value]) => (
-              <div key={key}>
-                <dt>{key}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        )}
-      </div>
-      <div className="limit" title="Time allowed to touch in at the second station">
-        {connection.minutes == null ? (
-          <span className="limit-value">–</span>
+        {station ? (
+          <Link to="/" search={{ from: station }} className="station-link">
+            {station}
+          </Link>
         ) : (
-          <>
-            <span className="limit-value">{connection.minutes}</span>
-            <span className="limit-unit">min</span>
-          </>
+          <span className="station-same">Within {from}</span>
         )}
+        {between && <p className="between">{between}</p>}
+        <p className="tags">
+          <span className="tag">{ticketTypes}</span>
+          {magneticMinutes != null && (
+            <span className="tag">Paper tickets: {magneticMinutes} min</span>
+          )}
+          {station && minutesBack !== minutesOut && (
+            <span className="tag">Other way: {minutesBack} min</span>
+          )}
+        </p>
+      </div>
+      <div
+        className="limit"
+        title={
+          station ? `Touch in at ${station} within this time` : "Time allowed between gatelines"
+        }
+      >
+        <span className="limit-value">{minutesOut}</span>
+        <span className="limit-unit">min</span>
       </div>
     </li>
   );

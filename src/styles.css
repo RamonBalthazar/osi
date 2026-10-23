@@ -177,23 +177,29 @@ h1 {
   text-decoration: underline;
 }
 
-.connection dl {
-  margin: 4px 0 0;
-  font-size: 0.85rem;
-  color: var(--muted);
+.station-same {
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
-.connection dl div {
+.between {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+}
+
+.tags {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 6px 0 0;
 }
 
-.connection dt::after {
-  content: ":";
-}
-
-.connection dd {
-  margin: 0;
+.tag {
+  padding: 1px 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
 }
 
 .limit {

@@ -14,8 +14,12 @@ npm run dev
 ```
 
 `npm run data -- path/to/out-of-station-interchanges.xlsx` converts a local copy instead of downloading.
-The converter finds the header row by its labels (station names and a time/minutes column) and keeps
-any other columns as extra details on each interchange.
+TfL's download sits behind a Cloudflare check that blocks many cloud and CI machines, so the local
+path is the fallback there. The generated `src/data/osi.json` is committed.
+
+The converter reads TfL's columns by name (`Station_A_Name`, `InterchangeTimeAB`, …) and fails if
+any are missing. Times are kept per direction. Abbreviated names such as "Charing X LU" are
+expanded via `scripts/station-names.ts`; the original name is kept as `sheetName`.
 
 ## Scripts
 

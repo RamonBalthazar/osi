@@ -1,5 +1,2518 @@
 {
   "source": "https://tfl.gov.uk/cdn/static/cms/documents/out-of-station-interchanges.xlsx",
-  "generatedAt": null,
-  "interchanges": []
+  "dataAsOf": "2026-03-01",
+  "interchanges": [
+    {
+      "a": {
+        "nlc": 502,
+        "name": "Aldgate",
+        "sheetName": "Aldgate"
+      },
+      "b": {
+        "nlc": 503,
+        "name": "Aldgate East",
+        "sheetName": "Aldgate East"
+      },
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 502,
+        "name": "Aldgate",
+        "sheetName": "Aldgate"
+      },
+      "b": {
+        "nlc": 864,
+        "name": "Tower Gateway (DLR)",
+        "sheetName": "Tower Gatewy DLR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 502,
+        "name": "Aldgate",
+        "sheetName": "Aldgate"
+      },
+      "b": {
+        "nlc": 7490,
+        "name": "Fenchurch Street (National Rail)",
+        "sheetName": "Fenchurch St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 508,
+        "name": "Archway",
+        "sheetName": "Archway"
+      },
+      "b": {
+        "nlc": 1524,
+        "name": "Upper Holloway",
+        "sheetName": "Upper Holloway"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 511,
+        "name": "Baker Street",
+        "sheetName": "Baker Street"
+      },
+      "b": {
+        "nlc": 1475,
+        "name": "Marylebone (National Rail)",
+        "sheetName": "Marylebone NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 512,
+        "name": "Balham (Underground)",
+        "sheetName": "Balham LU"
+      },
+      "b": {
+        "nlc": 5399,
+        "name": "Balham (National Rail)",
+        "sheetName": "Balham NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 513,
+        "name": "Bank",
+        "sheetName": "Bank"
+      },
+      "b": null,
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": 25,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": "Central/Northern/DLR and Waterloo & City gatelines"
+    },
+    {
+      "a": {
+        "nlc": 513,
+        "name": "Bank",
+        "sheetName": "Bank"
+      },
+      "b": {
+        "nlc": 536,
+        "name": "Cannon Street (Underground)",
+        "sheetName": "Cannon St LU"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 513,
+        "name": "Bank",
+        "sheetName": "Bank"
+      },
+      "b": {
+        "nlc": 644,
+        "name": "Monument",
+        "sheetName": "Monument"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 513,
+        "name": "Bank",
+        "sheetName": "Bank"
+      },
+      "b": {
+        "nlc": 5142,
+        "name": "Cannon Street (National Rail)",
+        "sheetName": "Cannon St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 513,
+        "name": "Bank",
+        "sheetName": "Bank"
+      },
+      "b": {
+        "nlc": 6965,
+        "name": "Liverpool Street (National Rail)",
+        "sheetName": "Liverpool St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 513,
+        "name": "Bank",
+        "sheetName": "Bank"
+      },
+      "b": {
+        "nlc": 7490,
+        "name": "Fenchurch Street (National Rail)",
+        "sheetName": "Fenchurch St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 517,
+        "name": "Bayswater",
+        "sheetName": "Bayswater"
+      },
+      "b": {
+        "nlc": 681,
+        "name": "Queensway",
+        "sheetName": "Queensway"
+      },
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 521,
+        "name": "Blackfriars (Underground)",
+        "sheetName": "Blackfriars LU"
+      },
+      "b": {
+        "nlc": 5112,
+        "name": "Blackfriars (National Rail)",
+        "sheetName": "Blackfriars NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 524,
+        "name": "Bond Street",
+        "sheetName": "Bond Street"
+      },
+      "b": {
+        "nlc": 669,
+        "name": "Oxford Circus",
+        "sheetName": "Oxford Circus"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 527,
+        "name": "Bounds Green",
+        "sheetName": "Bounds Green"
+      },
+      "b": {
+        "nlc": 6027,
+        "name": "Bowes Park",
+        "sheetName": "Bowes Park"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 528,
+        "name": "Bow Road",
+        "sheetName": "Bow Road"
+      },
+      "b": {
+        "nlc": 851,
+        "name": "Bow Church (DLR)",
+        "sheetName": "Bow Church DLR"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 535,
+        "name": "Camden Town",
+        "sheetName": "Camden Town"
+      },
+      "b": {
+        "nlc": 1440,
+        "name": "Camden Road",
+        "sheetName": "Camden Road"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 536,
+        "name": "Cannon Street (Underground)",
+        "sheetName": "Cannon St LU"
+      },
+      "b": {
+        "nlc": 5142,
+        "name": "Cannon Street (National Rail)",
+        "sheetName": "Cannon St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 542,
+        "name": "Embankment",
+        "sheetName": "Embankment"
+      },
+      "b": {
+        "nlc": 5143,
+        "name": "Charing Cross (National Rail)",
+        "sheetName": "Charing X NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 542,
+        "name": "Embankment",
+        "sheetName": "Embankment"
+      },
+      "b": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 542,
+        "name": "Embankment",
+        "sheetName": "Embankment"
+      },
+      "b": {
+        "nlc": 5465,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 542,
+        "name": "Embankment",
+        "sheetName": "Embankment"
+      },
+      "b": {
+        "nlc": 5598,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 542,
+        "name": "Embankment",
+        "sheetName": "Embankment"
+      },
+      "b": {
+        "nlc": 8909,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 548,
+        "name": "Clapham North",
+        "sheetName": "Clapham North"
+      },
+      "b": {
+        "nlc": 5301,
+        "name": "Clapham High Street",
+        "sheetName": "Clapham High St"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 567,
+        "name": "East Putney",
+        "sheetName": "East Putney"
+      },
+      "b": {
+        "nlc": 5603,
+        "name": "Putney",
+        "sheetName": "Putney"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 569,
+        "name": "Edgware Road (Circle & H&C)",
+        "sheetName": "Edgware Rd C&H"
+      },
+      "b": {
+        "nlc": 774,
+        "name": "Edgware Road (Bakerloo)",
+        "sheetName": "Edgware Rd B"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 569,
+        "name": "Edgware Road (Circle & H&C)",
+        "sheetName": "Edgware Rd C&H"
+      },
+      "b": {
+        "nlc": 1475,
+        "name": "Marylebone (National Rail)",
+        "sheetName": "Marylebone NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 570,
+        "name": "Elephant & Castle (Underground)",
+        "sheetName": "Elephant & C LU"
+      },
+      "b": {
+        "nlc": 5246,
+        "name": "Elephant & Castle (National Rail)",
+        "sheetName": "Elephant & C NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 573,
+        "name": "Woolwich Arsenal (DLR)",
+        "sheetName": "Woolwch Arsn DLR"
+      },
+      "b": {
+        "nlc": 6562,
+        "name": "Woolwich",
+        "sheetName": "Woolwich"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 574,
+        "name": "Euston (Underground)",
+        "sheetName": "Euston LU"
+      },
+      "b": {
+        "nlc": 575,
+        "name": "Euston Square",
+        "sheetName": "Euston Square"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 574,
+        "name": "Euston (Underground)",
+        "sheetName": "Euston LU"
+      },
+      "b": {
+        "nlc": 1444,
+        "name": "Euston (National Rail)",
+        "sheetName": "Euston NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 575,
+        "name": "Euston Square",
+        "sheetName": "Euston Square"
+      },
+      "b": {
+        "nlc": 745,
+        "name": "Warren Street",
+        "sheetName": "Warren Street"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 575,
+        "name": "Euston Square",
+        "sheetName": "Euston Square"
+      },
+      "b": {
+        "nlc": 1444,
+        "name": "Euston (National Rail)",
+        "sheetName": "Euston NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 577,
+        "name": "Farringdon",
+        "sheetName": "Farringdon"
+      },
+      "b": null,
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Integrated Ticket Hall and other entrances"
+    },
+    {
+      "a": {
+        "nlc": 579,
+        "name": "Finchley Road",
+        "sheetName": "Finchley Road"
+      },
+      "b": {
+        "nlc": 1445,
+        "name": "Finchley Road & Frognal",
+        "sheetName": "Finchley Rd Fgnl"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 580,
+        "name": "Finsbury Park (Underground)",
+        "sheetName": "Finsbury Pk LU"
+      },
+      "b": {
+        "nlc": 6119,
+        "name": "Finsbury Park (National Rail)",
+        "sheetName": "Finsbury Pk NR"
+      },
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 593,
+        "name": "Hammersmith (District & Piccadilly)",
+        "sheetName": "Hammersmith D&P"
+      },
+      "b": {
+        "nlc": 773,
+        "name": "Hammersmith (Circle & H&C)",
+        "sheetName": "Hammersmith C&H"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 595,
+        "name": "Hanger Lane",
+        "sheetName": "Hanger Lane"
+      },
+      "b": {
+        "nlc": 671,
+        "name": "Park Royal",
+        "sheetName": "Park Royal"
+      },
+      "minutesAToB": 25,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 599,
+        "name": "Wood Lane",
+        "sheetName": "Wood Lane"
+      },
+      "b": {
+        "nlc": 764,
+        "name": "White City",
+        "sheetName": "White City"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 600,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 625,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 600,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 772,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 600,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 1555,
+        "name": "St Pancras International",
+        "sheetName": "St Pancras Intl"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 600,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 6121,
+        "name": "King's Cross (National Rail)",
+        "sheetName": "Kings Cross NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 603,
+        "name": "Highbury",
+        "sheetName": "Highbury"
+      },
+      "b": null,
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "LO platforms W end exit and main entrance"
+    },
+    {
+      "a": {
+        "nlc": 615,
+        "name": "Ickenham",
+        "sheetName": "Ickenham"
+      },
+      "b": {
+        "nlc": 762,
+        "name": "West Ruislip",
+        "sheetName": "West Ruislip"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 619,
+        "name": "Kentish Town",
+        "sheetName": "Kentish Town"
+      },
+      "b": {
+        "nlc": 1449,
+        "name": "Kentish Town West",
+        "sheetName": "Kentish Tn West"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 620,
+        "name": "Kenton",
+        "sheetName": "Kenton"
+      },
+      "b": {
+        "nlc": 660,
+        "name": "Northwick Park",
+        "sheetName": "Northwick Park"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 622,
+        "name": "Kilburn",
+        "sheetName": "Kilburn"
+      },
+      "b": {
+        "nlc": 1437,
+        "name": "Brondesbury",
+        "sheetName": "Brondesbury"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 625,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 772,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 625,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 1555,
+        "name": "St Pancras International",
+        "sheetName": "St Pancras Intl"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 625,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 6121,
+        "name": "King's Cross (National Rail)",
+        "sheetName": "Kings Cross NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 629,
+        "name": "Lancaster Gate",
+        "sheetName": "Lancaster Gate"
+      },
+      "b": {
+        "nlc": 3087,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 629,
+        "name": "Lancaster Gate",
+        "sheetName": "Lancaster Gate"
+      },
+      "b": {
+        "nlc": 6093,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Contactless only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 629,
+        "name": "Lancaster Gate",
+        "sheetName": "Lancaster Gate"
+      },
+      "b": {
+        "nlc": 6552,
+        "name": "Paddington (Elizabeth line)",
+        "sheetName": "Paddington EL"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 633,
+        "name": "Leytonstone",
+        "sheetName": "Leytonstone"
+      },
+      "b": {
+        "nlc": 7403,
+        "name": "Leytonstone High Road",
+        "sheetName": "Leytonstone H Rd"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 634,
+        "name": "Liverpool Street (Underground)",
+        "sheetName": "Liverpool St LU"
+      },
+      "b": {
+        "nlc": 6965,
+        "name": "Liverpool Street (National Rail)",
+        "sheetName": "Liverpool St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 635,
+        "name": "London Bridge (Underground)",
+        "sheetName": "London Bridge LU"
+      },
+      "b": {
+        "nlc": 5148,
+        "name": "London Bridge (National Rail)",
+        "sheetName": "London Bridge NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 635,
+        "name": "London Bridge (Underground)",
+        "sheetName": "London Bridge LU"
+      },
+      "b": {
+        "nlc": 6336,
+        "name": "London Bridge (National Rail)",
+        "sheetName": "London Bridge NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 641,
+        "name": "Marylebone (Underground)",
+        "sheetName": "Marylebone LU"
+      },
+      "b": {
+        "nlc": 1475,
+        "name": "Marylebone (National Rail)",
+        "sheetName": "Marylebone NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 644,
+        "name": "Monument",
+        "sheetName": "Monument"
+      },
+      "b": {
+        "nlc": 7490,
+        "name": "Fenchurch Street (National Rail)",
+        "sheetName": "Fenchurch St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 645,
+        "name": "Moorgate",
+        "sheetName": "Moorgate"
+      },
+      "b": {
+        "nlc": 6965,
+        "name": "Liverpool Street (National Rail)",
+        "sheetName": "Liverpool St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 669,
+        "name": "Oxford Circus",
+        "sheetName": "Oxford Circus"
+      },
+      "b": null,
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Argyll Street exit and main entrance"
+    },
+    {
+      "a": {
+        "nlc": 670,
+        "name": "Paddington (Underground)",
+        "sheetName": "Paddington LU"
+      },
+      "b": null,
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": 25,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": "Platforms 15 & 16 and other LU gatelines"
+    },
+    {
+      "a": {
+        "nlc": 670,
+        "name": "Paddington (Underground)",
+        "sheetName": "Paddington LU"
+      },
+      "b": {
+        "nlc": 3087,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 670,
+        "name": "Paddington (Underground)",
+        "sheetName": "Paddington LU"
+      },
+      "b": {
+        "nlc": 6093,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & contactless",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 670,
+        "name": "Paddington (Underground)",
+        "sheetName": "Paddington LU"
+      },
+      "b": {
+        "nlc": 6552,
+        "name": "Paddington (Elizabeth line)",
+        "sheetName": "Paddington EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 689,
+        "name": "Liverpool Street (Underground)",
+        "sheetName": "Liverpool St LU"
+      },
+      "b": {
+        "nlc": 6965,
+        "name": "Liverpool Street (National Rail)",
+        "sheetName": "Liverpool St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 698,
+        "name": "Seven Sisters",
+        "sheetName": "Seven Sisters"
+      },
+      "b": null,
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Seven Sisters Road and Platform 2 secondary exit"
+    },
+    {
+      "a": {
+        "nlc": 698,
+        "name": "Seven Sisters",
+        "sheetName": "Seven Sisters"
+      },
+      "b": {
+        "nlc": 7404,
+        "name": "South Tottenham",
+        "sheetName": "South Tottenham"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 700,
+        "name": "Shepherd's Bush (Underground)",
+        "sheetName": "Shepherds Bsh LU"
+      },
+      "b": {
+        "nlc": 9587,
+        "name": "Shepherd's Bush (Overground)",
+        "sheetName": "Shepherds Bsh LO"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 720,
+        "name": "Sudbury Hill",
+        "sheetName": "Sudbury Hil"
+      },
+      "b": {
+        "nlc": 1484,
+        "name": "Sudbury Hill Harrow",
+        "sheetName": "Sudbury Hill Hrw"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 722,
+        "name": "Victoria (District & Circle)",
+        "sheetName": "Victoria D LU"
+      },
+      "b": {
+        "nlc": 5426,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 722,
+        "name": "Victoria (District & Circle)",
+        "sheetName": "Victoria D LU"
+      },
+      "b": {
+        "nlc": 8558,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 728,
+        "name": "Tottenham Court Road",
+        "sheetName": "Tottenham Ct Rd"
+      },
+      "b": null,
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Central and Northern line gatelines"
+    },
+    {
+      "a": {
+        "nlc": 729,
+        "name": "Tottenham Hale (Underground)",
+        "sheetName": "Tottenham H LU"
+      },
+      "b": {
+        "nlc": 6951,
+        "name": "Tottenham Hale (National Rail)",
+        "sheetName": "Tottenham H NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 731,
+        "name": "Tower Hill",
+        "sheetName": "Tower Hill"
+      },
+      "b": {
+        "nlc": 864,
+        "name": "Tower Gateway (DLR)",
+        "sheetName": "Tower Gatewy DLR"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 731,
+        "name": "Tower Hill",
+        "sheetName": "Tower Hill"
+      },
+      "b": {
+        "nlc": 7490,
+        "name": "Fenchurch Street (National Rail)",
+        "sheetName": "Fenchurch St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 732,
+        "name": "Charing Cross (Underground)",
+        "sheetName": "Charing X LU"
+      },
+      "b": {
+        "nlc": 5143,
+        "name": "Charing Cross (National Rail)",
+        "sheetName": "Charing X NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 741,
+        "name": "Victoria (Victoria line)",
+        "sheetName": "Victoria V LU"
+      },
+      "b": {
+        "nlc": 5426,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 741,
+        "name": "Victoria (Victoria line)",
+        "sheetName": "Victoria V LU"
+      },
+      "b": {
+        "nlc": 8558,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 742,
+        "name": "Walthamstow Central (Underground)",
+        "sheetName": "Walthmstow C LU"
+      },
+      "b": {
+        "nlc": 6953,
+        "name": "Walthamstow Central (Overground)",
+        "sheetName": "Walthamstow C LO"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 742,
+        "name": "Walthamstow Central (Underground)",
+        "sheetName": "Walthmstow C LU"
+      },
+      "b": {
+        "nlc": 7407,
+        "name": "Walthamstow Queen's Road",
+        "sheetName": "Walthamstw Qns Rd"
+      },
+      "minutesAToB": 25,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 747,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": null,
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "W&C and Bakerloo/Northern"
+    },
+    {
+      "a": {
+        "nlc": 747,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 796,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 747,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 747,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 5465,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 747,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 5598,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 747,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 8909,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 758,
+        "name": "West Hampstead (Underground)",
+        "sheetName": "W Hampstead LU"
+      },
+      "b": {
+        "nlc": 1421,
+        "name": "West Hampstead (Overground)",
+        "sheetName": "W Hampstead LO"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 758,
+        "name": "West Hampstead (Underground)",
+        "sheetName": "W Hampstead LU"
+      },
+      "b": {
+        "nlc": 1525,
+        "name": "West Hampstead (Thameslink)",
+        "sheetName": "W Hampstead Tlnk"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 759,
+        "name": "West Harrow",
+        "sheetName": "West Harrow"
+      },
+      "b": null,
+      "minutesAToB": 5,
+      "minutesBToA": 5,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "EB and WB platforms"
+    },
+    {
+      "a": {
+        "nlc": 769,
+        "name": "Woodford",
+        "sheetName": "Woodford"
+      },
+      "b": null,
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "SB to NB (step-free)"
+    },
+    {
+      "a": {
+        "nlc": 772,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 1555,
+        "name": "St Pancras International",
+        "sheetName": "St Pancras Intl"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 772,
+        "name": "King's Cross (Underground)",
+        "sheetName": "Kings Cross LU"
+      },
+      "b": {
+        "nlc": 6121,
+        "name": "King's Cross (National Rail)",
+        "sheetName": "Kings Cross NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 777,
+        "name": "Vauxhall (Underground)",
+        "sheetName": "Vauxhall LU"
+      },
+      "b": {
+        "nlc": 5597,
+        "name": "Vauxhall (National Rail)",
+        "sheetName": "Vauxhall NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 778,
+        "name": "Brixton (Underground)",
+        "sheetName": "Brixton LU"
+      },
+      "b": {
+        "nlc": 5081,
+        "name": "Brixton (National Rail)",
+        "sheetName": "Brixton NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 784,
+        "name": "Southwark",
+        "sheetName": "Southwark"
+      },
+      "b": {
+        "nlc": 5112,
+        "name": "Blackfriars (National Rail)",
+        "sheetName": "Blackfriars NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 784,
+        "name": "Southwark",
+        "sheetName": "Southwark"
+      },
+      "b": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 796,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 796,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 5465,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 796,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 5598,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 796,
+        "name": "Waterloo (Underground)",
+        "sheetName": "Waterloo LU"
+      },
+      "b": {
+        "nlc": 8909,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 832,
+        "name": "Battersea Power Station",
+        "sheetName": "Battersea Pwr S"
+      },
+      "b": {
+        "nlc": 5420,
+        "name": "Battersea Park",
+        "sheetName": "Battersea Park"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 832,
+        "name": "Battersea Power Station",
+        "sheetName": "Battersea Pwr S"
+      },
+      "b": {
+        "nlc": 5596,
+        "name": "Queenstown Road",
+        "sheetName": "Queenstown Road"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 842,
+        "name": "Canary Wharf (DLR)",
+        "sheetName": "Canary Wharf DLR"
+      },
+      "b": {
+        "nlc": 852,
+        "name": "Canary Wharf (Underground)",
+        "sheetName": "Canary Wharf LU"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 842,
+        "name": "Canary Wharf (DLR)",
+        "sheetName": "Canary Wharf DLR"
+      },
+      "b": {
+        "nlc": 6560,
+        "name": "Canary Wharf (Elizabeth line)",
+        "sheetName": "Canary Wharf EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 852,
+        "name": "Canary Wharf (Underground)",
+        "sheetName": "Canary Wharf LU"
+      },
+      "b": {
+        "nlc": 855,
+        "name": "Heron Quays (DLR)",
+        "sheetName": "Heron Quays DLR"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 852,
+        "name": "Canary Wharf (Underground)",
+        "sheetName": "Canary Wharf LU"
+      },
+      "b": {
+        "nlc": 6560,
+        "name": "Canary Wharf (Elizabeth line)",
+        "sheetName": "Canary Wharf EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Magnetic & PAYG",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 858,
+        "name": "Poplar (DLR)",
+        "sheetName": "Poplar DLR"
+      },
+      "b": {
+        "nlc": 6560,
+        "name": "Canary Wharf (Elizabeth line)",
+        "sheetName": "Canary Wharf EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 860,
+        "name": "Shadwell (DLR)",
+        "sheetName": "Shadwell DLR"
+      },
+      "b": {
+        "nlc": 1082,
+        "name": "Shadwell (Overground)",
+        "sheetName": "Shadwell LO"
+      },
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 862,
+        "name": "Limehouse (DLR)",
+        "sheetName": "Limehouse DLR"
+      },
+      "b": {
+        "nlc": 7491,
+        "name": "Limehouse (National Rail)",
+        "sheetName": "Limehouse NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 864,
+        "name": "Tower Gateway (DLR)",
+        "sheetName": "Tower Gatewy DLR"
+      },
+      "b": {
+        "nlc": 7490,
+        "name": "Fenchurch Street (National Rail)",
+        "sheetName": "Fenchurch St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 866,
+        "name": "West India Quay (DLR)",
+        "sheetName": "W India Quay DLR"
+      },
+      "b": {
+        "nlc": 6560,
+        "name": "Canary Wharf (Elizabeth line)",
+        "sheetName": "Canary Wharf EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 887,
+        "name": "Custom House (DLR)",
+        "sheetName": "Custom House DLR"
+      },
+      "b": {
+        "nlc": 6561,
+        "name": "Custom House (Elizabeth line)",
+        "sheetName": "Custom House EL"
+      },
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 940,
+        "name": "Lewisham (DLR)",
+        "sheetName": "Lewisham DLR"
+      },
+      "b": {
+        "nlc": 5051,
+        "name": "Lewisham (National Rail)",
+        "sheetName": "Lewisham NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1421,
+        "name": "West Hampstead (Overground)",
+        "sheetName": "W Hampstead LO"
+      },
+      "b": {
+        "nlc": 1525,
+        "name": "West Hampstead (Thameslink)",
+        "sheetName": "W Hampstead Tlnk"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1429,
+        "name": "Dalston Kingsland",
+        "sheetName": "Dalston Kingsld"
+      },
+      "b": {
+        "nlc": 1443,
+        "name": "Dalston Junction",
+        "sheetName": "Dalston Junction"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1444,
+        "name": "Euston (National Rail)",
+        "sheetName": "Euston NR"
+      },
+      "b": {
+        "nlc": 1555,
+        "name": "St Pancras International",
+        "sheetName": "St Pancras Intl"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1444,
+        "name": "Euston (National Rail)",
+        "sheetName": "Euston NR"
+      },
+      "b": {
+        "nlc": 6121,
+        "name": "King's Cross (National Rail)",
+        "sheetName": "Kings Cross NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1475,
+        "name": "Marylebone (National Rail)",
+        "sheetName": "Marylebone NR"
+      },
+      "b": {
+        "nlc": 3087,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1475,
+        "name": "Marylebone (National Rail)",
+        "sheetName": "Marylebone NR"
+      },
+      "b": {
+        "nlc": 6093,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "Contactless only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 1555,
+        "name": "St Pancras International",
+        "sheetName": "St Pancras Intl"
+      },
+      "b": null,
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "East Midlands Railway platforms and Thameslink"
+    },
+    {
+      "a": {
+        "nlc": 1555,
+        "name": "St Pancras International",
+        "sheetName": "St Pancras Intl"
+      },
+      "b": {
+        "nlc": 6121,
+        "name": "King's Cross (National Rail)",
+        "sheetName": "Kings Cross NR"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 3087,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "b": {
+        "nlc": 6552,
+        "name": "Paddington (Elizabeth line)",
+        "sheetName": "Paddington EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5047,
+        "name": "Catford Bridge",
+        "sheetName": "Catford Bridge"
+      },
+      "b": {
+        "nlc": 5077,
+        "name": "Catford",
+        "sheetName": "Catford"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5048,
+        "name": "Clock House",
+        "sheetName": "Clock House"
+      },
+      "b": {
+        "nlc": 5080,
+        "name": "Kent House",
+        "sheetName": "Kent House"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5051,
+        "name": "Lewisham (National Rail)",
+        "sheetName": "Lewisham NR"
+      },
+      "b": null,
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Plat 1 and other plats (step-free)"
+    },
+    {
+      "a": {
+        "nlc": 5064,
+        "name": "Bromley South",
+        "sheetName": "Bromley South"
+      },
+      "b": {
+        "nlc": 5096,
+        "name": "Bromley North",
+        "sheetName": "Bromley North"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5072,
+        "name": "Penge East",
+        "sheetName": "Penge East"
+      },
+      "b": {
+        "nlc": 5378,
+        "name": "Penge West",
+        "sheetName": "Penge West"
+      },
+      "minutesAToB": 25,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5112,
+        "name": "Blackfriars (National Rail)",
+        "sheetName": "Blackfriars NR"
+      },
+      "b": null,
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "North end of Platform 1 and 2-4"
+    },
+    {
+      "a": {
+        "nlc": 5148,
+        "name": "London Bridge (National Rail)",
+        "sheetName": "London Bridge NR"
+      },
+      "b": {
+        "nlc": 6336,
+        "name": "London Bridge (National Rail)",
+        "sheetName": "London Bridge NR"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5150,
+        "name": "New Cross",
+        "sheetName": "New Cross"
+      },
+      "b": {
+        "nlc": 5345,
+        "name": "New Cross Gate",
+        "sheetName": "New Cross Gate"
+      },
+      "minutesAToB": 25,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5152,
+        "name": "Woolwich Arsenal (National Rail)",
+        "sheetName": "Woolwch Arsn NR"
+      },
+      "b": {
+        "nlc": 6562,
+        "name": "Woolwich",
+        "sheetName": "Woolwich"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "b": {
+        "nlc": 5465,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "b": {
+        "nlc": 5598,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5158,
+        "name": "Waterloo East (National Rail)",
+        "sheetName": "Waterloo E NR"
+      },
+      "b": {
+        "nlc": 8909,
+        "name": "Waterloo (National Rail)",
+        "sheetName": "Waterloo NR"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5391,
+        "name": "Upper Warlingham",
+        "sheetName": "Upper Warlingham"
+      },
+      "b": {
+        "nlc": 5396,
+        "name": "Whyteleafe",
+        "sheetName": "Whyteleafe"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5426,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "b": {
+        "nlc": 8558,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 5570,
+        "name": "Richmond",
+        "sheetName": "Richmond"
+      },
+      "b": null,
+      "minutesAToB": 10,
+      "minutesBToA": 10,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Bridge and lower concourse (step-free)"
+    },
+    {
+      "a": {
+        "nlc": 6012,
+        "name": "Harringay",
+        "sheetName": "Harringay"
+      },
+      "b": {
+        "nlc": 7401,
+        "name": "Harringay Green Lanes",
+        "sheetName": "Harringay Grn Ln"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6093,
+        "name": "Paddington (National Rail)",
+        "sheetName": "Paddington NR"
+      },
+      "b": {
+        "nlc": 6552,
+        "name": "Paddington (Elizabeth line)",
+        "sheetName": "Paddington EL"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "Contactless only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6867,
+        "name": "Hackney Downs",
+        "sheetName": "Hackney Downs"
+      },
+      "b": {
+        "nlc": 6977,
+        "name": "Hackney Central",
+        "sheetName": "Hackney Central"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6876,
+        "name": "Forest Gate",
+        "sheetName": "Forest Gate"
+      },
+      "b": {
+        "nlc": 7408,
+        "name": "Wanstead Park",
+        "sheetName": "Wanstead Park"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6883,
+        "name": "Manor Park",
+        "sheetName": "Manor Park"
+      },
+      "b": {
+        "nlc": 7467,
+        "name": "Woodgrange Park",
+        "sheetName": "Woodgrange Park"
+      },
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6953,
+        "name": "Walthamstow Central (Overground)",
+        "sheetName": "Walthamstow C LO"
+      },
+      "b": {
+        "nlc": 7407,
+        "name": "Walthamstow Queen's Road",
+        "sheetName": "Walthamstw Qns Rd"
+      },
+      "minutesAToB": 25,
+      "minutesBToA": 25,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6965,
+        "name": "Liverpool Street (National Rail)",
+        "sheetName": "Liverpool St NR"
+      },
+      "b": null,
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Platforms 1-10 and 11-18"
+    },
+    {
+      "a": {
+        "nlc": 6965,
+        "name": "Liverpool Street (National Rail)",
+        "sheetName": "Liverpool St NR"
+      },
+      "b": {
+        "nlc": 7490,
+        "name": "Fenchurch Street (National Rail)",
+        "sheetName": "Fenchurch St NR"
+      },
+      "minutesAToB": 40,
+      "minutesBToA": 40,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 8558,
+        "name": "Victoria (National Rail)",
+        "sheetName": "Victoria NR"
+      },
+      "b": null,
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "PAYG only",
+      "between": "Platforms 1-7 and 8"
+    },
+    {
+      "a": {
+        "nlc": 6092,
+        "name": "Stevenage",
+        "sheetName": "Stevenage"
+      },
+      "b": null,
+      "minutesAToB": 20,
+      "minutesBToA": 20,
+      "magneticMinutes": null,
+      "ticketTypes": "Contactless only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 6183,
+        "name": "Welwyn Garden City",
+        "sheetName": "Welwyn Garden City"
+      },
+      "b": null,
+      "minutesAToB": 15,
+      "minutesBToA": 15,
+      "magneticMinutes": null,
+      "ticketTypes": "Contactless only",
+      "between": null
+    },
+    {
+      "a": {
+        "nlc": 7456,
+        "name": "Southend Central",
+        "sheetName": "Southend Central"
+      },
+      "b": {
+        "nlc": 7420,
+        "name": "Southend Victoria",
+        "sheetName": "Southend Victoria"
+      },
+      "minutesAToB": 30,
+      "minutesBToA": 30,
+      "magneticMinutes": null,
+      "ticketTypes": "Contactless only",
+      "between": null
+    }
+  ]
 }

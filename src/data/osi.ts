@@ -1,9 +1,14 @@
 import data from "./osi.json";
 
 export interface Connection {
-  station: string;
-  minutes: number | null;
-  extra: Record<string, string>;
+  // null when the interchange is between gatelines of the same station.
+  station: string | null;
+  // Time allowed leaving this station and touching in at the other one.
+  minutesOut: number;
+  minutesBack: number;
+  magneticMinutes: number | null;
+  ticketTypes: string;
+  between: string | null;
 }
 
 export interface Station {
@@ -12,15 +17,23 @@ export interface Station {
   connections: Connection[];
 }
 
+interface StationRef {
+  nlc: number;
+  name: string;
+}
+
 interface RawInterchange {
-  from: string;
-  to: string;
-  minutes: number | null;
-  extra: Record<string, string>;
+  a: StationRef;
+  b: StationRef | null;
+  minutesAToB: number;
+  minutesBToA: number;
+  magneticMinutes: number | null;
+  ticketTypes: string;
+  between: string | null;
 }
 
 export const source: string = data.source;
-export const generatedAt: string | null = data.generatedAt;
+export const dataAsOf: string | null = data.dataAsOf;
 
 // Normalises names so "King's Cross St. Pancras" matches "kings cross st pancras".
 export function normalise(name: string): string {
@@ -28,40 +41,57 @@ export function normalise(name: string): string {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
+    .replace(/['’]/g, "")
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
 
 function buildStations(interchanges: RawInterchange[]): Map<string, Station> {
+  // Stations are grouped by name: TfL lists some, like King's Cross, under several codes.
   const stations = new Map<string, Station>();
-  const getStation = (name: string) => {
+  const add = (name: string, connection: Connection) => {
     const key = normalise(name);
     let station = stations.get(key);
     if (!station) {
       station = { name, key, connections: [] };
       stations.set(key, station);
     }
-    return station;
-  };
-  const link = (a: string, b: string, minutes: number | null, extra: Record<string, string>) => {
-    const station = getStation(a);
-    const otherKey = normalise(b);
-    const existing = station.connections.find((c) => normalise(c.station) === otherKey);
-    if (!existing) {
-      station.connections.push({ station: getStation(b).name, minutes, extra });
-    } else if (minutes != null && (existing.minutes == null || minutes > existing.minutes)) {
-      // If the sheet lists a pair twice with different limits, show the more generous one.
-      existing.minutes = minutes;
+    const id = JSON.stringify(connection);
+    if (!station.connections.some((c) => JSON.stringify(c) === id)) {
+      station.connections.push(connection);
     }
   };
-  for (const { from, to, minutes, extra } of interchanges) {
-    // OSIs work in both directions.
-    link(from, to, minutes, extra);
-    link(to, from, minutes, extra);
+  for (const {
+    a,
+    b,
+    minutesAToB,
+    minutesBToA,
+    magneticMinutes,
+    ticketTypes,
+    between,
+  } of interchanges) {
+    const shared = { magneticMinutes, ticketTypes, between };
+    add(a.name, {
+      station: b?.name ?? null,
+      minutesOut: minutesAToB,
+      minutesBack: minutesBToA,
+      ...shared,
+    });
+    if (b) {
+      add(b.name, {
+        station: a.name,
+        minutesOut: minutesBToA,
+        minutesBack: minutesAToB,
+        ...shared,
+      });
+    }
   }
   for (const station of stations.values()) {
-    station.connections.sort((a, b) => a.station.localeCompare(b.station));
+    // Same-station interchanges first, then alphabetical.
+    station.connections.sort((x, y) =>
+      x.station === null ? -1 : y.station === null ? 1 : x.station.localeCompare(y.station),
+    );
   }
   return stations;
 }

@@ -1,18 +1,43 @@
 // Downloads TfL's out-of-station interchange (OSI) spreadsheet and converts it
 // to src/data/osi.json. Pass a local path to skip the download:
-//   npm run data -- ./data/out-of-station-interchanges.xlsx
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname } from "node:path";
+//   npm run data -- ./out-of-station-interchanges.xlsx
+import { readFile, writeFile } from "node:fs/promises";
 import ExcelJS from "exceljs";
+import { displayName } from "./station-names.ts";
 
 const SOURCE_URL = "https://tfl.gov.uk/cdn/static/cms/documents/out-of-station-interchanges.xlsx";
 const OUT_FILE = new URL("../src/data/osi.json", import.meta.url);
 
+// Column headers in TfL's sheet. The script fails if any are missing.
+const COLUMNS = {
+  aCode: "Station_A",
+  aName: "Station_A_Name",
+  bCode: "Station_B",
+  bName: "Station_B_Name",
+  timeAB: "InterchangeTimeAB",
+  timeBA: "InterchangeTimeBA",
+  magneticTime: "SameNLCMagneticTime",
+  type: "Type",
+  between: "Interchange between",
+} as const;
+
+// Station_B is 0 when the interchange is between gatelines of the same station.
+const SAME_STATION_CODE = 0;
+
+interface StationRef {
+  nlc: number;
+  name: string;
+  sheetName: string;
+}
+
 interface Interchange {
-  from: string;
-  to: string;
-  minutes: number | null;
-  extra: Record<string, string>;
+  a: StationRef;
+  b: StationRef | null;
+  minutesAToB: number;
+  minutesBToA: number;
+  magneticMinutes: number | null;
+  ticketTypes: string;
+  between: string | null;
 }
 
 async function loadWorkbook(path: string | undefined): Promise<ExcelJS.Workbook> {
@@ -48,50 +73,43 @@ function cellText(cell: ExcelJS.Cell): string {
         .trim();
     if ("result" in value) return String(value.result ?? "").trim();
     if ("text" in value) return String(value.text).trim();
-    if (value instanceof Date) {
-      // Excel durations such as 00:15 come through as dates on 1899-12-30.
-      return String(value.getUTCHours() * 60 + value.getUTCMinutes());
-    }
   }
   return String(value).trim();
 }
 
-function parseMinutes(text: string): number | null {
-  const clock = /^(\d{1,2}):(\d{2})(?::\d{2})?$/.exec(text);
-  if (clock) return Number(clock[1]) * 60 + Number(clock[2]);
-  const match = /\d+(\.\d+)?/.exec(text);
-  return match ? Math.round(Number(match[0])) : null;
+function cellNumber(cell: ExcelJS.Cell, label: string): number {
+  const n = Number(cellText(cell));
+  if (!Number.isFinite(n)) throw new Error(`Row ${cell.row}: ${label} is not a number`);
+  return n;
 }
 
-interface Columns {
-  headerRow: number;
-  headers: string[];
-  from: number;
-  to: number;
-  minutes: number;
+// "Payg Only" and "PAYG only" both appear; normalise the casing.
+function ticketTypes(text: string): string {
+  const lower = text.toLowerCase();
+  return (lower.charAt(0).toUpperCase() + lower.slice(1)).replace(/\bpayg\b/gi, "PAYG");
 }
 
-// The sheet layout isn't guaranteed, so locate the header row by its labels.
-function findColumns(sheet: ExcelJS.Worksheet): Columns | null {
-  for (let r = 1; r <= Math.min(sheet.rowCount, 30); r++) {
-    const headers: string[] = [];
-    sheet.getRow(r).eachCell({ includeEmpty: true }, (cell, c) => {
-      headers[c] = cellText(cell);
-    });
-    const lower = headers.map((h) => (h ?? "").toLowerCase());
-    const minutes = lower.findIndex((h) => /time|minute|limit|mins/.test(h));
-    const stationCols = lower
-      .map((h, i) =>
-        /station|from|to\b|between|and\b|interchange/.test(h) && i !== minutes ? i : -1,
-      )
-      .filter((i) => i > 0);
-    if (minutes > 0 && stationCols.length >= 2) {
-      const from =
-        stationCols.find((i) => /from|first|^station 1|between/.test(lower[i]!)) ?? stationCols[0]!;
-      const to =
-        stationCols.find((i) => i !== from && /to\b|second|^station 2|and\b/.test(lower[i]!)) ??
-        stationCols.find((i) => i !== from)!;
-      return { headerRow: r, headers, from, to, minutes };
+function findHeaderRow(sheet: ExcelJS.Worksheet): Map<string, number> {
+  for (let r = 1; r <= Math.min(sheet.rowCount, 20); r++) {
+    const headers = new Map<string, number>();
+    sheet.getRow(r).eachCell((cell, c) => headers.set(cellText(cell), c));
+    if (headers.has(COLUMNS.aCode) && headers.has(COLUMNS.timeAB)) {
+      const missing = Object.values(COLUMNS).filter((name) => !headers.has(name));
+      if (missing.length) throw new Error(`Missing columns: ${missing.join(", ")}`);
+      headers.set("__row", r);
+      return headers;
+    }
+  }
+  throw new Error(`No header row with "${COLUMNS.aCode}" found; the sheet layout has changed.`);
+}
+
+// e.g. "Data up to 01/03/2026" in the title row -> "2026-03-01".
+function findDataDate(sheet: ExcelJS.Worksheet): string | null {
+  for (let r = 1; r <= 2; r++) {
+    for (const value of sheet.getRow(r).values as unknown[]) {
+      if (value instanceof Date) return value.toISOString().slice(0, 10);
+      const match = /(\d{2})\/(\d{2})\/(\d{4})/.exec(String(value ?? ""));
+      if (match) return `${match[3]}-${match[2]}-${match[1]}`;
     }
   }
   return null;
@@ -99,52 +117,53 @@ function findColumns(sheet: ExcelJS.Worksheet): Columns | null {
 
 async function main() {
   const workbook = await loadWorkbook(process.argv[2]);
-  const interchanges: Interchange[] = [];
+  const sheet = workbook.worksheets[0];
+  if (!sheet) throw new Error("The workbook has no sheets.");
+  const headers = findHeaderRow(sheet);
+  const col = (key: keyof typeof COLUMNS) => headers.get(COLUMNS[key])!;
 
-  workbook.eachSheet((sheet) => {
-    const columns = findColumns(sheet);
-    if (!columns) {
-      console.warn(
-        `Skipping sheet "${sheet.name}": no header row with station and time columns found.`,
-      );
-      return;
+  const rows: Array<{ row: ExcelJS.Row; aCode: number; bCode: number }> = [];
+  // One code can be spelled several ways ("Oxford Circ", "Oxford Circus"); keep the longest.
+  const sheetNames = new Map<number, string>();
+  const noteName = (code: number, name: string) => {
+    if (code !== SAME_STATION_CODE && name.length > (sheetNames.get(code)?.length ?? 0)) {
+      sheetNames.set(code, name);
     }
-    const { headerRow, headers, from, to, minutes } = columns;
-    console.log(
-      `Sheet "${sheet.name}": from="${headers[from]}", to="${headers[to]}", time="${headers[minutes]}"`,
-    );
-    for (let r = headerRow + 1; r <= sheet.rowCount; r++) {
-      const row = sheet.getRow(r);
-      const fromName = cellText(row.getCell(from));
-      const toName = cellText(row.getCell(to));
-      if (!fromName || !toName) continue;
-      const extra: Record<string, string> = {};
-      headers.forEach((header, c) => {
-        if (!header || c === from || c === to || c === minutes) return;
-        const text = cellText(row.getCell(c));
-        if (text) extra[header] = text;
-      });
-      interchanges.push({
-        from: fromName,
-        to: toName,
-        minutes: parseMinutes(cellText(row.getCell(minutes))),
-        extra,
-      });
-    }
+  };
+  for (let r = headers.get("__row")! + 1; r <= sheet.rowCount; r++) {
+    const row = sheet.getRow(r);
+    if (!cellText(row.getCell(col("aCode")))) continue;
+    const aCode = cellNumber(row.getCell(col("aCode")), COLUMNS.aCode);
+    const bCode = cellNumber(row.getCell(col("bCode")), COLUMNS.bCode);
+    noteName(aCode, cellText(row.getCell(col("aName"))));
+    noteName(bCode, cellText(row.getCell(col("bName"))));
+    rows.push({ row, aCode, bCode });
+  }
+
+  const station = (nlc: number): StationRef => {
+    const sheetName = sheetNames.get(nlc)!;
+    return { nlc, name: displayName(sheetName), sheetName };
+  };
+  const interchanges: Interchange[] = rows.map(({ row, aCode, bCode }) => {
+    const magnetic = cellNumber(row.getCell(col("magneticTime")), COLUMNS.magneticTime);
+    return {
+      a: station(aCode),
+      b: bCode === SAME_STATION_CODE ? null : station(bCode),
+      minutesAToB: cellNumber(row.getCell(col("timeAB")), COLUMNS.timeAB),
+      minutesBToA: cellNumber(row.getCell(col("timeBA")), COLUMNS.timeBA),
+      magneticMinutes: magnetic > 0 ? magnetic : null,
+      ticketTypes: ticketTypes(cellText(row.getCell(col("type")))),
+      between: cellText(row.getCell(col("between"))) || null,
+    };
   });
 
-  if (interchanges.length === 0) {
-    throw new Error(
-      "No interchanges found. The spreadsheet layout may have changed; update findColumns().",
-    );
-  }
+  if (interchanges.length === 0) throw new Error("No interchanges found in the sheet.");
 
   const generated = {
     source: SOURCE_URL,
-    generatedAt: new Date().toISOString(),
+    dataAsOf: findDataDate(sheet),
     interchanges,
   };
-  await mkdir(dirname(OUT_FILE.pathname), { recursive: true });
   await writeFile(OUT_FILE, `${JSON.stringify(generated, null, 2)}\n`);
   console.log(`Wrote ${interchanges.length} interchanges to ${OUT_FILE.pathname}`);
 }
