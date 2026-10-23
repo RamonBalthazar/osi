@@ -23,8 +23,8 @@ expanded via `scripts/station-names.ts`; the original name is kept as `sheetName
 
 ## Deploying
 
-`.github/workflows/pages.yml` checks, builds and deploys to GitHub Pages on every push to the
-default branch (other branches are built and checked only). Turn it on once under
+`.github/workflows/pages.yml` checks, builds and deploys to GitHub Pages on every push to
+`main` (other branches are built and checked only). Turn it on once under
 **Settings → Pages → Build and deployment → Source: GitHub Actions**. The site is served at
 `https://<user>.github.io/<repo>/`; set `BASE_PATH` when building for any other sub-path.
 

@@ -37,7 +37,7 @@ jobs:
           path: dist/client
 
   deploy:
-    if: github.ref_name == github.event.repository.default_branch
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
