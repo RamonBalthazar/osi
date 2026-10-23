@@ -23,7 +23,13 @@ async function loadWorkbook(path: string | undefined): Promise<ExcelJS.Workbook>
   } else {
     console.log(`Downloading ${SOURCE_URL}`);
     const res = await fetch(SOURCE_URL);
-    if (!res.ok) throw new Error(`Download failed: ${res.status} ${res.statusText}`);
+    if (!res.ok || res.headers.get("content-type")?.includes("text/html")) {
+      // TfL's CDN sits behind a Cloudflare challenge that rejects many cloud/CI IPs.
+      throw new Error(
+        `Download failed: ${res.status} ${res.statusText}. If TfL is blocking this machine, ` +
+          "download the file in a browser and run: npm run data -- path/to/file.xlsx",
+      );
+    }
     buffer = await res.arrayBuffer();
   }
   const workbook = new ExcelJS.Workbook();
