@@ -33,6 +33,10 @@
   height: 15px;
 }
 
+.square {
+  aspect-ratio: 1;
+}
+
 .compact .line {
   padding: 0 5px;
   font-size: 0.7rem;
