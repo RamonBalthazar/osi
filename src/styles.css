@@ -53,17 +53,8 @@ h1 {
   color: var(--muted);
 }
 
-.searches {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.search {
   margin-bottom: 24px;
-}
-
-@media (max-width: 560px) {
-  .searches {
-    grid-template-columns: 1fr;
-  }
 }
 
 .search label {

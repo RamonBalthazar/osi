@@ -1,40 +1,22 @@
 import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
 import { StationSearch } from "../components/StationSearch";
-import {
-  dataAsOf,
-  findStation,
-  normalise,
-  source,
-  stationList,
-  type Connection,
-} from "../data/osi";
+import { dataAsOf, findStation, source, stationList, type Connection } from "../data/osi";
 
 interface Search {
   from?: string;
-  to?: string;
 }
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>): Search => ({
     from: typeof search.from === "string" && search.from ? search.from : undefined,
-    to: typeof search.to === "string" && search.to ? search.to : undefined,
   }),
   component: Home,
 });
 
 function Home() {
-  const { from, to } = Route.useSearch();
+  const { from } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
   const fromStation = from ? findStation(from) : undefined;
-  const toStation = to ? findStation(to) : undefined;
-  const candidates = fromStation?.connections.flatMap((c) =>
-    c.station ? (findStation(c.station) ?? []) : [],
-  );
-  const shown = fromStation
-    ? toStation
-      ? fromStation.connections.filter((c) => c.station && normalise(c.station) === toStation.key)
-      : fromStation.connections
-    : [];
   const count = fromStation?.connections.length ?? 0;
 
   return (
@@ -53,25 +35,12 @@ function Home() {
           spreadsheet.
         </p>
       ) : (
-        <section className="searches" aria-label="Search">
-          <StationSearch
-            label="Station"
-            placeholder="e.g. Bank, Hammersmith"
-            value={fromStation?.name ?? ""}
-            onSelect={(station) =>
-              navigate({ search: { from: station?.name, to: undefined }, replace: !station })
-            }
-          />
-          <StationSearch
-            label="Interchange with (optional)"
-            placeholder={fromStation ? "Filter its interchanges" : "Pick a station first"}
-            value={toStation?.name ?? ""}
-            candidates={candidates ?? []}
-            onSelect={(station) =>
-              navigate({ search: (prev) => ({ ...prev, to: station?.name }), replace: true })
-            }
-          />
-        </section>
+        <StationSearch
+          label="Station"
+          placeholder="e.g. Bank, Hammersmith"
+          value={fromStation?.name ?? ""}
+          onSelect={(station) => navigate({ search: { from: station?.name }, replace: !station })}
+        />
       )}
 
       {from && !fromStation && (
@@ -86,14 +55,8 @@ function Home() {
               {count} interchange{count === 1 ? "" : "s"}
             </span>
           </h2>
-          {to && shown.length === 0 && (
-            <p className="notice">
-              There is no out-of-station interchange between {fromStation.name} and{" "}
-              {toStation?.name ?? to}.
-            </p>
-          )}
           <ul className="connections">
-            {shown.map((connection, i) => (
+            {fromStation.connections.map((connection, i) => (
               <ConnectionCard key={i} from={fromStation.name} connection={connection} />
             ))}
           </ul>

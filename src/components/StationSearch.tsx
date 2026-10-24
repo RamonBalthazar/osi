@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { searchStations, type Station } from "../data/osi";
 
 interface Props {
@@ -6,12 +6,11 @@ interface Props {
   placeholder: string;
   value: string;
   onSelect: (station: Station | null) => void;
-  // Restricts suggestions, e.g. to stations that interchange with the first pick.
-  candidates?: Station[];
 }
 
-export function StationSearch({ label, placeholder, value, onSelect, candidates }: Props) {
+export function StationSearch({ label, placeholder, value, onSelect }: Props) {
   const id = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState(value);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
@@ -23,15 +22,14 @@ export function StationSearch({ label, placeholder, value, onSelect, candidates 
     setQuery(value);
   }
 
-  const allowed = candidates ? new Set(candidates.map((s) => s.key)) : null;
-  const results = (
-    allowed ? searchStations(query, 500).filter((s) => allowed.has(s.key)) : searchStations(query)
-  ).slice(0, 10);
+  const results = searchStations(query);
   const showList = open && results.length > 0;
 
   const choose = (station: Station) => {
     setQuery(station.name);
     setOpen(false);
+    // Blurring closes the on-screen keyboard on phones so the results are visible.
+    inputRef.current?.blur();
     onSelect(station);
   };
 
@@ -40,6 +38,7 @@ export function StationSearch({ label, placeholder, value, onSelect, candidates 
       <label htmlFor={id}>{label}</label>
       <div className="search-field">
         <input
+          ref={inputRef}
           id={id}
           type="search"
           role="combobox"
