@@ -1,0 +1,41 @@
+/* Design tokens and base element styles. Component styles live in *.module.css next to each component. */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #16181d;
+  --muted: #5d6470;
+  --border: #dde1e7;
+  --accent: #0019a8; /* TfL blue */
+  --accent-soft: #e6e9fb;
+  --limit-bg: #0019a8;
+  --limit-text: #ffffff;
+  --shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #181b21;
+    --text: #e8eaee;
+    --muted: #9aa1ad;
+    --border: #2b3039;
+    --accent: #8c9bff;
+    --accent-soft: #232a4d;
+    --limit-bg: #3346d3;
+    --shadow: 0 8px 24px rgb(0 0 0 / 0.5);
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}

@@ -1,6 +1,8 @@
-import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { ConnectionCard } from "../components/ConnectionCard";
 import { StationSearch } from "../components/StationSearch";
-import { dataAsOf, findStation, source, stationList, type Connection } from "../data/osi";
+import { dataAsOf, findStation, source, stationList } from "../data/osi";
+import styles from "./index.module.css";
 
 interface Search {
   from?: string;
@@ -20,17 +22,17 @@ function Home() {
   const count = fromStation?.connections.length ?? 0;
 
   return (
-    <main>
+    <main className={styles.page}>
       <header>
-        <h1>Out-of-station interchanges</h1>
-        <p className="lede">
+        <h1 className={styles.title}>Out-of-station interchanges</h1>
+        <p className={styles.lede}>
           Some London stations let you leave the gateline, walk to a nearby station and carry on as
           one journey, as long as you touch in again within the time limit.
         </p>
       </header>
 
       {stationList.length === 0 ? (
-        <p className="notice">
+        <p className={styles.notice}>
           No interchange data has been loaded yet. Run <code>npm run data</code> to download TfL's
           spreadsheet.
         </p>
@@ -44,18 +46,20 @@ function Home() {
       )}
 
       {from && !fromStation && (
-        <p className="notice">No station called “{from}” has an out-of-station interchange.</p>
+        <p className={styles.notice}>
+          No station called “{from}” has an out-of-station interchange.
+        </p>
       )}
 
       {fromStation && (
-        <section className="results" aria-live="polite">
-          <h2>
+        <section aria-live="polite">
+          <h2 className={styles.heading}>
             {fromStation.name}
-            <span className="count">
+            <span className={styles.count}>
               {count} interchange{count === 1 ? "" : "s"}
             </span>
           </h2>
-          <ul className="connections">
+          <ul className={styles.connections}>
             {fromStation.connections.map((connection, i) => (
               <ConnectionCard key={i} from={fromStation.name} connection={connection} />
             ))}
@@ -63,47 +67,11 @@ function Home() {
         </section>
       )}
 
-      <footer>
+      <footer className={styles.footer}>
         Data: <a href={source}>TfL out-of-station interchanges</a>
         {dataAsOf && <>, up to {new Date(dataAsOf).toLocaleDateString("en-GB")}</>}. Station names
         are expanded from TfL's abbreviations. Always check before you travel.
       </footer>
     </main>
-  );
-}
-
-function ConnectionCard({ from, connection }: { from: string; connection: Connection }) {
-  const { station, minutesOut, minutesBack, magneticMinutes, ticketTypes, between } = connection;
-  return (
-    <li className="connection">
-      <div className="connection-main">
-        {station ? (
-          <Link to="/" search={{ from: station }} className="station-link">
-            {station}
-          </Link>
-        ) : (
-          <span className="station-same">Within {from}</span>
-        )}
-        {between && <p className="between">{between}</p>}
-        <p className="tags">
-          <span className="tag">{ticketTypes}</span>
-          {magneticMinutes != null && (
-            <span className="tag">Paper tickets: {magneticMinutes} min</span>
-          )}
-          {station && minutesBack !== minutesOut && (
-            <span className="tag">Other way: {minutesBack} min</span>
-          )}
-        </p>
-      </div>
-      <div
-        className="limit"
-        title={
-          station ? `Touch in at ${station} within this time` : "Time allowed between gatelines"
-        }
-      >
-        <span className="limit-value">{minutesOut}</span>
-        <span className="limit-unit">min</span>
-      </div>
-    </li>
   );
 }

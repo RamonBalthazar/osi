@@ -3,7 +3,9 @@
 Search a London station and see which stations you can change to outside the gateline (an
 out-of-station interchange, or OSI), with the time limit for each.
 
-Built with TypeScript, TanStack Start in SPA mode (everything runs in the browser), oxlint and oxfmt.
+Built with TypeScript, TanStack Start in SPA mode (everything runs in the browser), Radix UI
+primitives, CSS Modules (one `*.module.css` per component; tokens in `src/global.css`), oxlint and
+oxfmt.
 
 ## Getting started
 
