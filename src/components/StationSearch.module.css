@@ -49,6 +49,13 @@
   cursor: pointer;
 }
 
+.optionMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .option[aria-selected="true"] {
   background: var(--accent-soft);
 }

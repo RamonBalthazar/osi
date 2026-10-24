@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ConnectionCard } from "../components/ConnectionCard";
+import { StationLines } from "../components/StationLines";
 import { StationSearch } from "../components/StationSearch";
 import { dataAsOf, findStation, source, stationList } from "../data/osi";
 import styles from "./index.module.css";
@@ -59,6 +60,9 @@ function Home() {
               {count} interchange{count === 1 ? "" : "s"}
             </span>
           </h2>
+          <div className={styles.stationLines}>
+            <StationLines name={fromStation.name} />
+          </div>
           <ul className={styles.connections}>
             {fromStation.connections.map((connection, i) => (
               <ConnectionCard key={i} from={fromStation.name} connection={connection} />

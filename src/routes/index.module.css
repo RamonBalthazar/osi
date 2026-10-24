@@ -20,8 +20,12 @@
   align-items: baseline;
   flex-wrap: wrap;
   gap: 8px 12px;
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   font-size: 1.4rem;
+}
+
+.stationLines {
+  margin-bottom: 12px;
 }
 
 .count {

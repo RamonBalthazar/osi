@@ -1,6 +1,7 @@
 import { Label, Popover } from "radix-ui";
 import { useId, useRef, useState } from "react";
 import { searchStations, type Station } from "../data/osi";
+import { StationLines } from "./StationLines";
 import styles from "./StationSearch.module.css";
 
 interface Props {
@@ -106,7 +107,10 @@ export function StationSearch({ label, placeholder, value, onSelect }: Props) {
                   }}
                   onMouseEnter={() => setActive(i)}
                 >
-                  <span>{station.name}</span>
+                  <span className={styles.optionMain}>
+                    <span>{station.name}</span>
+                    <StationLines name={station.name} compact />
+                  </span>
                   <small className={styles.count}>
                     {station.connections.length} interchange
                     {station.connections.length === 1 ? "" : "s"}

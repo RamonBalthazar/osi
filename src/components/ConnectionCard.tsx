@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { Connection } from "../data/osi";
 import styles from "./ConnectionCard.module.css";
+import { StationLines } from "./StationLines";
 
 export function ConnectionCard({ from, connection }: { from: string; connection: Connection }) {
   const { station, minutesOut, minutesBack, magneticMinutes, ticketTypes, between } = connection;
@@ -13,6 +14,11 @@ export function ConnectionCard({ from, connection }: { from: string; connection:
           </Link>
         ) : (
           <span className={styles.station}>Within {from}</span>
+        )}
+        {station && (
+          <div className={styles.lines}>
+            <StationLines name={station} />
+          </div>
         )}
         {between && <p className={styles.between}>{between}</p>}
         <p className={styles.tags}>

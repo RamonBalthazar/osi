@@ -3,6 +3,7 @@
 //   npm run data -- ./out-of-station-interchanges.xlsx
 import { readFile, writeFile } from "node:fs/promises";
 import ExcelJS from "exceljs";
+import { stationLines } from "../src/data/lines.ts";
 import { displayName } from "./station-names.ts";
 
 const SOURCE_URL = "https://tfl.gov.uk/cdn/static/cms/documents/out-of-station-interchanges.xlsx";
@@ -166,6 +167,12 @@ async function main() {
   };
   await writeFile(OUT_FILE, `${JSON.stringify(generated, null, 2)}\n`);
   console.log(`Wrote ${interchanges.length} interchanges to ${OUT_FILE.pathname}`);
+
+  const names = new Set(interchanges.flatMap(({ a, b }) => (b ? [a.name, b.name] : [a.name])));
+  const unlisted = [...names].filter((name) => stationLines(name).modes.length === 0);
+  if (unlisted.length) {
+    console.warn(`No lines listed in src/data/lines.ts for: ${unlisted.join(", ")}`);
+  }
 }
 
 await main();

@@ -27,6 +27,10 @@ a.station:hover {
   text-decoration: underline;
 }
 
+.lines {
+  margin-top: 4px;
+}
+
 .between {
   margin: 2px 0 0;
   font-size: 0.9rem;
